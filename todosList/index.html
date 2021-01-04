@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <link rel="stylesheet" href="css/style-index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todos</title>
-  <link rel="stylesheet" href="css/style-index.css">
-</head>
+  <body>
+    <div class="task-list">
+      <h1 class="header-list">todos</h1>
 
-<body>
-  <div class="task-list">
-    <h1 class="header-list">todos</h1>
-    <div class="select-list">
-      <span>What needs to be done?</span>
-      <div class="list-item">
-        <div class="item">
-          <label>
-            <input type="checkbox">
+      <div class="select-list">
+        <input
+          type="text"
+          class="entry-field"
+          placeholder="What needs to be done?"
+        />
+
+        <div class="list-item">
+          <label class="item">
+            <input type="checkbox" />
             <span class="text-item">New task 1</span>
           </label>
-        </div>
-        <div class="item">
-          <label>
-            <input type="checkbox">
+
+          <label class="item">
+            <input type="checkbox" checked />
             <span class="text-item">New task 3</span>
           </label>
-        </div>
-        <div class="item">
-          <label>
-            <input type="checkbox">
+
+          <label class="item">
+            <input type="checkbox" />
             <span class="text-item">New task 2</span>
           </label>
+
+          <label class="item">
+            <input type="checkbox" />
+            <span class="text-item">New task 4</span>
+          </label>
+
+          <label class="item">
+            <input type="checkbox" />
+            <span class="text-item">New task 5</span>
+          </label>
         </div>
+        
         <div class="navigation-item">
           <span>2 2 left</span>
           <div>
@@ -47,7 +60,5 @@
         <div class="hidden-item hidden-item-second"></div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
