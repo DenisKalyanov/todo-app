@@ -33,16 +33,6 @@ body {
   box-shadow: 0 0 1rem 0 #8f8f8f;
 }
 
-@media all and (max-width: 30rem) {
-  .select-list {
-    min-width: 7.5rem;
-  }
-
-  .hidden-item {
-    display: none;
-  }
-}
-
 .select-list:hover {
   color: #bbb;
 }
@@ -85,10 +75,13 @@ body {
   border-top: 0.1rem solid #ededed;
 }
 
+.item:last-child {
+  border-bottom: 0.1rem solid #ededed;
+}
+
 .list-item,
 .navigation-item {
   display: none;
-  position: relative;
   font-style: normal;
 }
 
@@ -104,8 +97,8 @@ input[type="checkbox"]:checked + .text-item {
   justify-content: space-between;
   align-items: flex-end;
   color: #777;
-  border-top: 0.1rem solid #ededed;
-  padding: 0.5rem 0 0 0.5rem;
+  margin: 0.5rem 0 0 0.5rem;
+  position: relative;
 }
 
 .navigation-item span {
@@ -129,6 +122,10 @@ input[type="checkbox"]:checked + .text-item {
 }
 
 .hidden-item {
+  display: none;
+}
+.select-list:hover .hidden-item {
+  display: block;
   height: 1rem;
   position: absolute;
   background-color: #fefefe;
@@ -137,15 +134,25 @@ input[type="checkbox"]:checked + .text-item {
 }
 
 .hidden-item-first {
-  width: 22rem;
-  bottom: -0.7rem;
-  left: 0.3rem;
+  width:28rem;
+  top: 2.7rem;
   z-index: -1;
 }
 
 .hidden-item-second {
-  width: 21rem;
-  bottom: -1rem;
-  left: 0.8rem;
+  width: 27rem;
+  top: 3.3rem;
+  left: 0.5rem;
   z-index: -2;
+}
+@media all and (max-width: 30rem) {
+  .select-list {
+    min-width: 95%;
+    margin: 0.5rem;
+  }
+
+  .select-list:hover .hidden-item{
+    display: none;
+  }
+
 }
