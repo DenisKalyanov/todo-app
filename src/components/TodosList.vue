@@ -1,85 +1,25 @@
 <template>
   <div class="task-list">
-    <h1 class="header-list">todos</h1>
-
-    <div class="select-list">
-      <input
-        type="text"
-        class="entry-field"
-        placeholder="What needs to be done?"
-      />
-
-      <div class="list-item">
-        <label class="item">
-          <input type="checkbox" />
-          <span class="text-item">New task 1</span>
-        </label>
-
-        <label class="item">
-          <input type="checkbox" checked />
-          <span class="text-item">New task 3</span>
-        </label>
-
-        <label class="item">
-          <input type="checkbox" />
-          <span class="text-item">New task 2</span>
-        </label>
-
-        <label class="item">
-          <input type="checkbox" />
-          <span class="text-item">New task 4</span>
-        </label>
-
-        <label class="item">
-          <input type="checkbox" />
-          <span class="text-item">New task 5</span>
-        </label>
-      </div>
-
-      <div class="navigation-item">
-        <span>2 2 left</span>
-        <div>
-          <button class="nav-button">All</button>
-          <button class="nav-button">Active</button>
-          <button class="nav-button">Completed</button>
-        </div>
-        <div>
-          <button class="nav-button">Clear completed</button>
-        </div>
-        <div class="hidden-item hidden-item-first"></div>
-        <div class="hidden-item hidden-item-second"></div>
-      </div>
-    </div>
+    <Header />
+    <Content />
   </div>
 </template>
 
 <script>
+import Content from "./todoComponents/Content/Content";
+import Header from "./todoComponents/Header/Header";
+
 export default {
   name: "TodosList",
+  components: {
+    Content,
+    Header,
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background-color: #f5f5f5;
-  margin: 0 auto;
-  font-size: 1.5rem;
-}
-
-.header-list {
-  justify-content: flex-end;
-  padding: 1rem 0;
-  color: #e8d9d8;
-  font-family: Helvetica, sans-serif;
-}
-
+<style>
 .task-list {
   margin: 0 auto;
   display: flex;
@@ -87,130 +27,7 @@ body {
   align-items: center;
 }
 
-.select-list {
-  min-width: 30rem;
-  padding: 1rem 0.5rem;
-  font-style: italic;
-  color: #0f0000;
-  background-color: #fefefe;
-  box-shadow: 0 0 1rem 0 #8f8f8f;
-  position: relative;
-}
 
-.select-list:hover {
-  color: #bbb;
-}
-
-.select-list::before {
-  position: absolute;
-  content: "\02C5";
-  top: 1.5rem;
-  left: 1rem;
-}
-
-.select-list:hover .list-item {
-  display: block;
-  position: relative;
-  top: 0.6rem;
-  left: -0.3rem;
-}
-
-.entry-field {
-  padding: 0.5rem;
-  padding-left: 2.5rem;
-  font-family: "Helvetica Neue";
-  font-size: 1.5rem;
-  font-weight: 100;
-  font-style: italic;
-  border: 0;
-  width: 100%;
-  outline: none;
-  color: #505050;
-}
-
-.item {
-  display: block;
-  height: 3rem;
-  color: #0f0000;
-  padding: 0.5rem;
-  background-color: #fefefe;
-  border-top: 0.1rem solid #ededed;
-}
-
-.item:first-child {
-  border-top: 0.1rem solid #ededed;
-}
-
-.item:last-child {
-  border-bottom: 0.1rem solid #ededed;
-}
-
-.list-item,
-.navigation-item {
-  display: none;
-  font-style: normal;
-}
-
-input[type="checkbox"]:checked + .text-item {
-  text-decoration: line-through;
-  color: #bbb;
-}
-
-.select-list:hover .navigation-item {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 2rem;
-  justify-content: space-between;
-  align-items: flex-end;
-  color: #777;
-  margin: 0.5rem 0 0 0.5rem;
-  position: relative;
-}
-
-.navigation-item span {
-  padding-right: 1rem;
-  font-size: 1rem;
-  padding-bottom: 0.1rem;
-}
-
-.nav-button {
-  padding-right: 0.5rem;
-  background-color: transparent;
-  font-size: 1rem;
-  color: #777;
-  outline: none;
-  border: 0.1rem solid transparent;
-  cursor: pointer;
-}
-
-.nav-button:hover {
-  border: 0.1rem solid red;
-}
-
-.hidden-item {
-  display: none;
-}
-.select-list:hover .hidden-item {
-  display: block;
-  height: 1rem;
-  position: absolute;
-  background-color: #fefefe;
-  border: 0.1rem solid #ededed;
-  box-shadow: 0 0 0.6rem 0 #8f8f8f;
-}
-
-.hidden-item-first {
-  width: 28rem;
-  top: 2.7rem;
-  z-index: -1;
-}
-
-.hidden-item-second {
-  width: 27rem;
-  top: 3.3rem;
-  left: 0.5rem;
-  z-index: -2;
-}
 @media all and (max-width: 30rem) {
   .select-list {
     min-width: 100%;

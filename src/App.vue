@@ -16,4 +16,15 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
 </style>
