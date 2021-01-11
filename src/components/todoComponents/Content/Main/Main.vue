@@ -1,10 +1,10 @@
 <template>
   <div class="list-item">
-    <Item textItem="New task 1" />
-    <Item textItem="New task 3" />
+    <Item />
+    <!--<Item textItem="New task 3" />
     <Item textItem="New task 2" />
     <Item textItem="New task 4" />
-    <Item textItem="New task 5" />
+    <Item textItem="New task 5" /> -->
   </div>
 </template>
 

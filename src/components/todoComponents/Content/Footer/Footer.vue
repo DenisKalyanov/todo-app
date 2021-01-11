@@ -1,11 +1,7 @@
 <template>
   <div class="navigation-item">
     <span>2 2 left</span>
-    <div>
-      <Button buttonName="All" />
-      <Button buttonName="Active" />
-      <Button buttonName="Completed" />
-    </div>
+    <StatusButtons />
     <div>
       <Button buttonName="Clear completed" />
     </div>
@@ -16,11 +12,13 @@
 
 <script>
 import Button from "./Button/Button";
+import StatusButtons from "./StatusButtons";
 
 export default {
   name: "Footer",
   components: {
     Button,
+    StatusButtons,
   },
 };
 </script>
