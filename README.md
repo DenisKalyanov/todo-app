@@ -1,24 +1,17 @@
-# todos
+# todo-app
+
+# This project includes a stack of technologies such as
+
+## HTML, CSS, SASS, VUE, VUEX LocalStorage, CI/CD, ESLint, MockAPI AdvancedStack: Jest, Mocha, GitHubActions
+
+# Initial data is available by link
+https://github.com/DenisKalyanov/todo-app
 
 ## Project setup
-```
 npm install
-```
 
 ### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Author
+Denis Kalyanov
