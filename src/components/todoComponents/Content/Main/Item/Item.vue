@@ -1,27 +1,18 @@
 <template>
   <div>
-    <label class="item" v-for="message in messages" :key="message.id">
-      <input type="checkbox" />
-      <span class="text-item">{{ message }}</span>
+    <label class="item" v-for="task in allTasks" :key="task.id">
+      <input type="checkbox" :checked="task.checked" />
+      <span class="text-item">{{ task.message }}</span>
     </label>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Item",
-  props: ["textItem"],
-  data() {
-    return {
-      messages: [
-        "New task 1",
-        "New task 3",
-        "New task 2",
-        "New task 4",
-        "New task 5",
-      ],
-    };
-  },
+  computed: mapGetters(["allTasks"]),
 };
 </script>
 

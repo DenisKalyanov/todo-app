@@ -1,10 +1,17 @@
 <template>
-  <input type="text" class="entry-field" placeholder="What needs to be done?" />
+  <input
+    type="text"
+    class="entry-field"
+    placeholder="What needs to be done?"
+    v-model="newTask"
+  />
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "TaskField",
+  method: mapActions(["addTask"]),
 };
 </script>
 
