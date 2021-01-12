@@ -1,12 +1,13 @@
 export default{
     actions:{
-        // addTask(ctx, newTask){
-
-        // }
+        changeTasks(ctx, newTask){
+            ctx.commit("createTask",newTask)
+        }
+        
     },
     mutations:{
-        updateTasks(state, tasks){
-            state.tasks = tasks;
+        createTask(state, newTask){
+            state.tasks.push(newTask);
         }
     },
     state:{
@@ -20,6 +21,13 @@ export default{
     getters:{
         allTasks(state){
             return state.tasks;
-        }
-    },
+        },
+
+        activeTasks(state){
+            return state.tasks.filter(task=>task.checked === true);
+        },
+        completedTasks(state){
+            return state.tasks.filter(task=>task.checked === false);
+        },
+},
 }

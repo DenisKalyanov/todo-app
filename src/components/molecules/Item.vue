@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="item" v-for="task in allTasks" :key="task.id">
+    <label class="item" v-for="task in completedTasks" :key="task.id">
       <input type="checkbox" :checked="task.checked" />
       <span class="text-item">{{ task.message }}</span>
     </label>
@@ -12,7 +12,7 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Item",
-  computed: mapGetters(["allTasks"]),
+  computed: mapGetters(["allTasks", "completedTasks", "activeTasks"]),
 };
 </script>
 

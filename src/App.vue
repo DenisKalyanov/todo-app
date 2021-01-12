@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TodosList from "./components/TodosList.vue";
+import TodosList from "./components/oorganisms/TodosList";
 
 export default {
   name: "App",

@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import TaskField from "./TaskField/TaskField";
-import Main from "./Main/Main";
-import Footer from "./Footer/Footer";
+import TaskField from "../atoms/TaskField";
+import Main from "./Main";
+import Footer from "./Footer";
 
 export default {
   name: "Content",

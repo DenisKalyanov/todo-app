@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Content from "./todoComponents/Content/Content";
-import Header from "./todoComponents/Header/Header";
+import Content from "./Content";
+import Header from "../atoms/Header";
 
 export default {
   name: "TodosList",

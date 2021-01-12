@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Item from "./Item/Item";
+import Item from "../molecules/Item";
 
 export default {
   name: "Main",

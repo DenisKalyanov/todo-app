@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Button from "./Button/Button";
-import StatusButtons from "./StatusButtons";
+import Button from "../atoms/Button";
+import StatusButtons from "../molecules/StatusButtons";
 
 export default {
   name: "Footer",

@@ -1,17 +1,27 @@
 <template>
-  <input
-    type="text"
-    class="entry-field"
-    placeholder="What needs to be done?"
-    v-model="newTask"
-  />
+  <div>
+    <input
+      type="text"
+      class="entry-field"
+      placeholder="What needs to be done?"
+      v-on:keyup.enter="addTask"
+      v-model="text"
+    />
+    <div>{{ text }}</div>
+  </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
   name: "TaskField",
-  method: mapActions(["addTask"]),
+  data() {
+    return { text: "" };
+  },
+  methods: {
+    addTask() {
+      alert();
+    },
+  },
 };
 </script>
 
