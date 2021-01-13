@@ -1,11 +1,20 @@
 <template>
-  <button class="nav-button">{{ buttonName }}</button>
+  <button :name="status" class="nav-button" v-on:click="choiceTypeTasks">
+    {{ buttonName }}
+  </button>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   name: "Button",
-  props: ["buttonName"],
+  props: ["buttonName", "status"],
+  methods: {
+    ...mapMutations(["changeTypeTasks"]),
+    choiceTypeTasks() {
+      this.changeTypeTasks(event.target.name);
+    },
+  },
 };
 </script>
 
@@ -21,7 +30,8 @@ export default {
   cursor: pointer;
 }
 
-.nav-button:hover {
+.nav-button:hover,
+.nav-button:focus {
   border: 0.1rem solid red;
   color: black;
 }

@@ -1,18 +1,30 @@
 <template>
   <div>
-    <label class="item" v-for="task in completedTasks" :key="task.id">
-      <input type="checkbox" :checked="task.checked" />
+    <label class="item" v-for="task in choisenTasks" :key="task.id">
+      <input
+        type="checkbox"
+        :id="task.id"
+        :checked="task.checked"
+        @change="check($event.target)"
+      />
       <span class="text-item">{{ task.message }}</span>
     </label>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "Item",
-  computed: mapGetters(["allTasks", "completedTasks", "activeTasks"]),
+  methods: {
+    ...mapMutations(["changeStatus"]),
+    check() {
+      this.changeStatus(event.target.id);
+    },
+  },
+  computed: mapGetters([
+    "choisenTasks",
+  ]),
 };
 </script>
 

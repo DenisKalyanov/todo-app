@@ -27,4 +27,5 @@ export default {
   display: none;
   font-style: normal;
 }
+
 </style>

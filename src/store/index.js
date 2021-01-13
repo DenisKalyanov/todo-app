@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import text from "./modules/text"
+import taskMethods from "./modules/taskMethods"
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules:{
-        text,
+        taskMethods,
     }
 });

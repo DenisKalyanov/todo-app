@@ -3,7 +3,7 @@
     <span>2 2 left</span>
     <StatusButtons />
     <div>
-      <Button buttonName="Clear completed" />
+      <Button buttonName="Clear completed" status="deleteCompleted" />
     </div>
     <div class="hidden-item hidden-item-first"></div>
     <div class="hidden-item hidden-item-second"></div>
@@ -28,6 +28,7 @@ export default {
   display: none;
   font-style: normal;
 }
+
 
 .select-list:hover .navigation-item {
   display: flex;

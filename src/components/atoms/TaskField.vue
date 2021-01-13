@@ -4,22 +4,26 @@
       type="text"
       class="entry-field"
       placeholder="What needs to be done?"
+      v-model="newTask"
       v-on:keyup.enter="addTask"
-      v-model="text"
     />
-    <div>{{ text }}</div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   name: "TaskField",
   data() {
-    return { text: "" };
+    return {
+      newTask: "",
+    };
   },
   methods: {
+    ...mapMutations(["createTask"]),
     addTask() {
-      alert();
+      this.createTask(this.newTask);
+      this.newTask = "";
     },
   },
 };
