@@ -11,7 +11,7 @@ export default {
   props: ["buttonName", "status"],
   methods: {
     ...mapMutations(["changeTypeTasks"]),
-    choiceTypeTasks() {
+    choiceTypeTasks(event) {
       this.changeTypeTasks(event.target.name);
     },
   },
@@ -19,21 +19,22 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/colors";
+
 .nav-button {
   margin-right: 0.5rem;
   background-color: transparent;
   font-size: 1rem;
-  color: #777;
+  color: $grey;
   outline: none;
   border: 0.1rem solid transparent;
   border-radius: 0.2rem;
   cursor: pointer;
 
-}
-
-.nav-button:hover,
-.nav-button:focus {
-  border: 0.1rem solid red;
-  color: black;
+  &:hover,
+  &:focus {
+    border: 0.1rem solid $red;
+    color: $black;
+  }
 }
 </style>

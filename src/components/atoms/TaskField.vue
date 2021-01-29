@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/colors";
+
 .entry-field {
   padding: 0.5rem;
   padding-left: 2.5rem;
@@ -40,6 +42,6 @@ export default {
   border: 0;
   width: 100%;
   outline: none;
-  color: #505050;
+  color: $darkGrey;
 }
 </style>

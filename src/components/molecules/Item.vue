@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-show="showEmptyBlock" class="emptyBlock">
+      Completed tasks is empty
+    </div>
     <label class="item" v-for="task in choisenTasks" :key="task.id">
       <input
         type="checkbox"
@@ -18,40 +21,45 @@ export default {
   name: "Item",
   methods: {
     ...mapMutations(["changeStatus"]),
-    check() {
-      this.changeStatus(event.target.id);
+    check(target) {
+      this.changeStatus(target.id);
     },
   },
-  computed: mapGetters([
-    "choisenTasks",
-  ]),
+  computed: mapGetters(["choisenTasks", "showEmptyBlock"]),
 };
 </script>
 
 <style lang="scss">
+@import "../../styles/colors";
+
+.emptyBlock {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0.1rem 0 0.7rem 0;
+}
 .item {
   display: block;
   height: 3rem;
-  color: #0f0000;
+  color: $black;
   padding: 0.5rem;
-  background-color: white;
-  border-top: 0.1rem solid #e8d9d8;
-}
+  background-color: $white;
+  border-top: 0.1rem solid $lightGrey;
 
-.item:first-child {
-  border-top: 0.1rem solid  #e8d9d8;
-}
+  input[type="checkbox"]:checked + .text-item {
+    text-decoration: line-through;
+    color: $grey;
+  }
 
-.item:last-child {
-  border-bottom: 0.1rem solid  #e8d9d8;
-}
+  &:first-child {
+    border-top: 0.1rem solid $lightGrey;
 
-.text-item {
-  margin-left: 1.5rem;
-}
+    &:last-child {
+      border-bottom: 0.1rem solid $lightGrey;
+    }
+  }
 
-input[type="checkbox"]:checked + .text-item {
-  text-decoration: line-through;
-  color: #777;
+  .text-item {
+    margin-left: 1.5rem;
+  }
 }
 </style>

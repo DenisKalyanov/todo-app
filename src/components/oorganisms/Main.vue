@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss">
 
-
 .list-item {
   font-style: normal;
   display: block;

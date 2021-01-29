@@ -10,10 +10,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/colors";
+
 .header-list {
   justify-content: flex-end;
   padding: 1rem 0;
-  color: #e8d9d8;
+  color: $lightGrey;
   font-family: Helvetica, sans-serif;
 }
 </style>

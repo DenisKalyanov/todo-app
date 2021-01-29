@@ -15,26 +15,35 @@ export default{
         changeTypeTasks(state, targetName){
             
             if(targetName==="deleteCompleted"){
-                state.tasks.map((task, index)=> {
-                    console.log(task); 
-                    task.checked ?  state.tasks.splice(index,1) : task
-                }
-                )
-                state.statusButton.type = "allTasks";
+                state.tasks = state.tasks.filter(task => !task.checked )
+                state.emptyBlock.status = true;
+                return state.statusButton.type = "completedTasks";
             }
+            let completed = state.tasks.filter(task => task.checked );
+            if(targetName==="completedTasks" && completed.length ===0){
+                state.emptyBlock.status = true
+            }else{ state.emptyBlock.status = false}
+            
             state.statusButton.type = targetName;
         },
     },
     state:{
         tasks: [
-            {message: "New task FALSE", checked: false, id: 1111},
-            {message: "New task TRUE", checked: true, id: 2222},
+            {message: "New task COMPLETED", checked: true, id: 1111},
+            {message: "New task IN WORK", checked: false, id: 2222},
         ],
         statusButton: {
             type: "allTasks",
-        }
+        },
+
+        emptyBlock :{
+            status:false,
+        },
     },
     getters:{
+        showEmptyBlock(state){
+            return state.emptyBlock.status;
+        },
         allTasks(state){
             return state.tasks;
         },

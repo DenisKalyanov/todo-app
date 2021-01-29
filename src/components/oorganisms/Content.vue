@@ -22,25 +22,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/colors";
+
 .select-list {
   min-width: 30rem;
   padding: 1rem 0.5rem;
   font-style: italic;
-  color: black;
-  background-color: white;
-  box-shadow: 0 0 1rem 0 #777;
+  color: $black;
+  background-color: $white;
+  box-shadow: 0 0 1rem 0 $grey;
   position: relative;
-}
 
-.select-list:hover {
-  color: #777;
-}
+  &:hover {
+    color: $grey;
 
-.select-list::before {
-  position: absolute;
-  content: "\02C5";
-  top: 1.5rem;
-  left: 1rem;
+    &::before {
+      position: absolute;
+      content: "\02C5";
+      top: 1.5rem;
+      left: 1rem;
+    }
+  }
 }
 
 @media all and (max-width: 30rem) {

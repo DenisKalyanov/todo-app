@@ -7,6 +7,7 @@
 <script>
 import TodosList from "./components/oorganisms/TodosList";
 
+
 export default {
   name: "App",
   components: {
@@ -16,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./styles/colors";
 * {
   margin: 0;
   padding: 0;
