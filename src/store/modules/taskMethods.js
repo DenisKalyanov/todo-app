@@ -6,19 +6,24 @@ export default{
            
         },
         changeStatus(state, targetId){
-
             state.tasks.map(task => {
                 if(parseInt(task.id) === parseInt(targetId)){
-                    console.log(task.checked);
-                    console.log(state.tasks);
-                    task.checked= !task.checked}
+                task.checked= !task.checked}
                 else {return task}
             });
         },
         changeTypeTasks(state, targetName){
+            
+            if(targetName==="deleteCompleted"){
+                state.tasks.map((task, index)=> {
+                    console.log(task); 
+                    task.checked ?  state.tasks.splice(index,1) : task
+                }
+                )
+                state.statusButton.type = "allTasks";
+            }
             state.statusButton.type = targetName;
-            console.log(state.statusButton.type)
-        }
+        },
     },
     state:{
         tasks: [
@@ -35,10 +40,10 @@ export default{
         },
 
         activeTasks(state){
-            return state.tasks.filter(task=>task.checked === true);
+            return state.tasks.filter(task=>task.checked === false);
         },
         completedTasks(state){
-            return state.tasks.filter(task=>task.checked === false);
+            return state.tasks.filter(task=>task.checked === true);
         },
         choisenTasks(state, getters ){
             if(state.statusButton.type==="allTasks"){

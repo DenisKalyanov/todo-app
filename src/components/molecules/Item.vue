@@ -28,22 +28,22 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .item {
   display: block;
   height: 3rem;
   color: #0f0000;
   padding: 0.5rem;
-  background-color: #fefefe;
-  border-top: 0.1rem solid #ededed;
+  background-color: white;
+  border-top: 0.1rem solid #e8d9d8;
 }
 
 .item:first-child {
-  border-top: 0.1rem solid #ededed;
+  border-top: 0.1rem solid  #e8d9d8;
 }
 
 .item:last-child {
-  border-bottom: 0.1rem solid #ededed;
+  border-bottom: 0.1rem solid  #e8d9d8;
 }
 
 .text-item {
@@ -52,6 +52,6 @@ export default {
 
 input[type="checkbox"]:checked + .text-item {
   text-decoration: line-through;
-  color: #bbb;
+  color: #777;
 }
 </style>

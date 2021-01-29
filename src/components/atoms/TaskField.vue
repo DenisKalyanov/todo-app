@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .entry-field {
   padding: 0.5rem;
   padding-left: 2.5rem;

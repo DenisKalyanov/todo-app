@@ -19,14 +19,13 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss">
 .task-list {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 @media all and (max-width: 30rem) {
   .select-list {

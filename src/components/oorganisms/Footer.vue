@@ -23,14 +23,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
 .navigation-item {
-  display: none;
   font-style: normal;
-}
-
-
-.select-list:hover .navigation-item {
   display: flex;
   flex-wrap: wrap;
   min-height: 2rem;
@@ -48,15 +44,12 @@ export default {
 }
 
 .hidden-item {
-  display: none;
-}
-.select-list:hover .hidden-item {
   display: block;
   height: 1rem;
   position: absolute;
-  background-color: #fefefe;
-  border: 0.1rem solid #ededed;
-  box-shadow: 0 0 0.6rem 0 #8f8f8f;
+  background-color: white;
+  border: 0.1rem solid #e8d9d8;
+  box-shadow: 0 0 0.6rem 0 #777;
 }
 
 .hidden-item-first {

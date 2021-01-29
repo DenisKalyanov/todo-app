@@ -21,19 +21,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .select-list {
   min-width: 30rem;
   padding: 1rem 0.5rem;
   font-style: italic;
-  color: #0f0000;
-  background-color: #fefefe;
-  box-shadow: 0 0 1rem 0 #8f8f8f;
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 1rem 0 #777;
   position: relative;
 }
 
 .select-list:hover {
-  color: #bbb;
+  color: #777;
 }
 
 .select-list::before {

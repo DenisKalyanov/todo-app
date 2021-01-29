@@ -15,17 +15,15 @@ export default {
 };
 </script>
 
-<style>
-.select-list:hover .list-item {
+<style lang="scss">
+
+
+.list-item {
+  font-style: normal;
   display: block;
   position: relative;
   top: 0.6rem;
   left: -0.3rem;
-}
-
-.list-item {
-  display: none;
-  font-style: normal;
 }
 
 </style>

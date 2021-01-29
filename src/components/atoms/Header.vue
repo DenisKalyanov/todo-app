@@ -9,7 +9,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .header-list {
   justify-content: flex-end;
   padding: 1rem 0;

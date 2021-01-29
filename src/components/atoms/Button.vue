@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .nav-button {
   margin-right: 0.5rem;
   background-color: transparent;
@@ -28,6 +28,7 @@ export default {
   border: 0.1rem solid transparent;
   border-radius: 0.2rem;
   cursor: pointer;
+
 }
 
 .nav-button:hover,
