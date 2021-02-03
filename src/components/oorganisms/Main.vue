@@ -1,7 +1,5 @@
 <template>
-  <div class="list-item">
-    <Item />
-  </div>
+  <Item class="list-item" />
 </template>
 
 <script>
@@ -16,7 +14,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .list-item {
   font-style: normal;
   display: block;
@@ -24,5 +21,4 @@ export default {
   top: 0.6rem;
   left: -0.3rem;
 }
-
 </style>

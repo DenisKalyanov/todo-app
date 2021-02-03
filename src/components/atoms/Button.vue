@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/colors";
+@import "@/styles/colors.scss";
 
 .nav-button {
   margin-right: 0.5rem;

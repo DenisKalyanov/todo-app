@@ -17,6 +17,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+
 export default {
   name: "Item",
   methods: {
@@ -30,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/colors";
+@import "@/styles/colors.scss";
 
 .emptyBlock {
   margin: 0 auto;

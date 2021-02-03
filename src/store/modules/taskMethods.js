@@ -17,14 +17,14 @@ export default{
             if(targetName==="deleteCompleted"){
                 state.tasks = state.tasks.filter(task => !task.checked )
                 state.emptyBlock.status = true;
-                return state.statusButton.type = "completedTasks";
+                return state.statusButton = "completedTasks";
             }
             let completed = state.tasks.filter(task => task.checked );
             if(targetName==="completedTasks" && completed.length ===0){
                 state.emptyBlock.status = true
             }else{ state.emptyBlock.status = false}
             
-            state.statusButton.type = targetName;
+            state.statusButton = targetName;
         },
     },
     state:{
@@ -32,10 +32,7 @@ export default{
             {message: "New task COMPLETED", checked: true, id: 1111},
             {message: "New task IN WORK", checked: false, id: 2222},
         ],
-        statusButton: {
-            type: "allTasks",
-        },
-
+        statusButton: "allTasks",
         emptyBlock :{
             status:false,
         },
@@ -55,11 +52,11 @@ export default{
             return state.tasks.filter(task=>task.checked === true);
         },
         choisenTasks(state, getters ){
-            if(state.statusButton.type==="allTasks"){
+            if(state.statusButton==="allTasks"){
                 return getters.allTasks
-            }else if (state.statusButton.type==="activeTasks"){
+            }else if (state.statusButton==="activeTasks"){
                 return getters.activeTasks
-            }else  if (state.statusButton.type==="completedTasks"){
+            }else  if (state.statusButton==="completedTasks"){
                 return getters.completedTasks
             }
         }

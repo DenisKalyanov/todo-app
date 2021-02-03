@@ -10,7 +10,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/colors";
+@import "@/styles/colors.scss";
 
 .header-list {
   justify-content: flex-end;

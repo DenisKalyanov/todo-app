@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/colors";
+@import "@/styles/colors.scss";
 
 .select-list {
   min-width: 30rem;

@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <input
-      type="text"
-      class="entry-field"
-      placeholder="What needs to be done?"
-      v-model="newTask"
-      v-on:keyup.enter="addTask"
-    />
-  </div>
+  <input
+    type="text"
+    class="entry-field"
+    placeholder="What needs to be done?"
+    v-model="newTask"
+    v-on:keyup.enter="addTask"
+  />
 </template>
 
 <script>
@@ -30,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/colors";
+@import "@/styles/colors.scss";
 
 .entry-field {
   padding: 0.5rem;
