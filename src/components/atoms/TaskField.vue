@@ -3,7 +3,7 @@
     type="text"
     class="entry-field"
     placeholder="What needs to be done?"
-    v-model="newTask"
+    v-model.trim="newTask"
     v-on:keyup.enter="addTask"
   />
 </template>

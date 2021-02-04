@@ -34,7 +34,7 @@ export default {
   color: $grey;
   margin: 0.5rem 0 0 0.5rem;
   position: relative;
-  
+
   span {
     padding-right: 1rem;
     font-size: 1rem;

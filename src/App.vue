@@ -12,6 +12,9 @@ export default {
   components: {
     TodosList,
   },
+  mounted() {
+    this.$store.commit("setState");
+  },
 };
 </script>
 

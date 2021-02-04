@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div v-show="showEmptyBlock" class="emptyBlock">
-      Completed tasks is empty
-    </div>
     <label class="item" v-for="task in choisenTasks" :key="task.id">
       <input
         type="checkbox"
@@ -26,18 +23,13 @@ export default {
       this.changeStatus(target.id);
     },
   },
-  computed: mapGetters(["choisenTasks", "showEmptyBlock"]),
+  computed: mapGetters(["choisenTasks"]),
 };
 </script>
 
 <style lang="scss">
 @import "@/styles/colors.scss";
 
-.emptyBlock {
-  margin: 0 auto;
-  text-align: center;
-  padding: 0.1rem 0 0.7rem 0;
-}
 .item {
   display: block;
   height: 3rem;
