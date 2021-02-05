@@ -5,31 +5,30 @@ export default{
     mutations:{
         setState(state){
             state.tasks = JSON.parse(localStorage.getItem('tasks')) || new Array();
-            console.log(state.tasks)
         },
         createTask(state, newTask){
             if(newTask){
                 let task = {message: newTask, checked: false, id: uuidv4()};
                 state.tasks.push(task);
+                console.log( state.tasks)
                 localStorage.setItem('tasks', JSON.stringify(state.tasks));
             }
 
         },
         changeStatus(state, targetId){
-            state.tasks.map(task => {
-                if(task.id === targetId){
-                task.checked= !task.checked}
-                else {return task}
+            state.tasks = state.tasks.map(task => {
+                return task.id === targetId ? { ...task, checked: !task.checked }: task
             });
-            //localStorage.setItem('tasks', JSON.stringify(state.tasks))
+            localStorage.setItem('tasks', JSON.stringify(state.tasks)); 
         },
       
         changeTypeTasks(state, targetName){
 
             if(targetName==="deleteCompleted"){
-                state.tasks = state.tasks.filter(task => !task.checked )             
+                state.tasks = state.tasks.filter(task => !task.checked );          
+                localStorage.setItem('tasks', JSON.stringify(state.tasks));
                 return state.statusButton = "allTasks";
-              
+
             } 
             state.statusButton = targetName;
         }
@@ -45,11 +44,11 @@ export default{
         },
 
         activeTasks(state){
-            return state.tasks.filter(task=> task.checked === false);
+            return state.tasks.filter(task=> !task.checked);
 
         },
         completedTasks(state){
-            return state.tasks.filter(task=>task.checked === true);
+            return state.tasks.filter(task=>task.checked);
 
         },
         choisenTasks(state, getters ){
