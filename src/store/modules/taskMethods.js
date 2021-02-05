@@ -1,16 +1,20 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export default{
-    actions:{},
+    strict: true,
+    actions:{
+        setState(context) {
+            context.commit('setState');
+        },
+    },
     mutations:{
         setState(state){
             state.tasks = JSON.parse(localStorage.getItem('tasks')) || new Array();
         },
         createTask(state, newTask){
             if(newTask){
-                let task = {message: newTask, checked: false, id: uuidv4()};
+                const task = {message: newTask, checked: false, id: uuidv4()};
                 state.tasks.push(task);
-                console.log( state.tasks)
                 localStorage.setItem('tasks', JSON.stringify(state.tasks));
             }
 
@@ -32,7 +36,7 @@ export default{
             } 
             state.statusButton = targetName;
         }
-        },
+    },
     state:{
         tasks: [],
         statusButton: "allTasks",
@@ -60,6 +64,6 @@ export default{
             }else  if (state.statusButton==="completedTasks"){
                 return getters.completedTasks
             }
-        }
+    }
 },
 }

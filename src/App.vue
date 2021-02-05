@@ -13,7 +13,7 @@ export default {
     TodosList,
   },
   mounted() {
-    this.$store.commit("setState");
+    this.$store.dispatch("setState");
   },
 };
 </script>

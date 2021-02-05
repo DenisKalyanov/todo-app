@@ -20,7 +20,6 @@ export default {
   methods: {
     ...mapMutations(["changeStatus"]),
     check(target) {
-      console.log(target);
       this.changeStatus(target.id);
     },
   },

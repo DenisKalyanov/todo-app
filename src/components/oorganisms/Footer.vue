@@ -65,8 +65,10 @@ export default {
 }
 
 @media all and (max-width: 30rem) {
-  .select-list:hover .hidden-item {
-    display: none;
+  .navigation-item {
+    .hidden-item {
+      display: none;
+    }
   }
 }
 </style>
