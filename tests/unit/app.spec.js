@@ -7,10 +7,18 @@ localVue.use(Vuex)
 
 describe ("unit tests for App", ()=>{
 
-    const wrapper = shallowMount(App);
-           
-    test("render a h1",()=>{
-        expect(wrapper.contains("h1")).toBeTruthy();
-    })
+    let actions;
+    let store;
+
+    beforeEach(() => {
+        actions = {
+            setState: jest.fn(),
+        }
+        store = new Vuex.Store({
+          actions
+        })
+      })
+
+
 })
 
