@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TodosList from "./components/oorganisms/TodosList";
+import TodosList from "./components/organisms/TodosList";
 
 export default {
   name: "App",
@@ -13,7 +13,7 @@ export default {
     TodosList,
   },
   mounted() {
-    this.$store.dispatch("setState");
+    this.$store.commit("setState");
   },
 };
 </script>

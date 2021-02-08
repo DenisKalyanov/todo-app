@@ -26,7 +26,6 @@ export default {
   computed: mapGetters(["choisenTasks"]),
 };
 </script>
-
 <style lang="scss">
 @import "@/styles/colors.scss";
 

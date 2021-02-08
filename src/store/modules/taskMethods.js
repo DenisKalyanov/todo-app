@@ -9,7 +9,7 @@ export default{
     },
     mutations:{
         setState(state){
-            state.tasks = JSON.parse(localStorage.getItem('tasks')) || new Array();
+            state.tasks = JSON.parse(localStorage.getItem('tasks'));
         },
         createTask(state, newTask){
             if(newTask){
