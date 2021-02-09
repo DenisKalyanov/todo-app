@@ -5,7 +5,7 @@ import Vuex from "vuex";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe ("unit tests for Main", ()=>{
+describe("unit tests for Main", () => {
 
     let getters;
     let store;
@@ -20,7 +20,7 @@ describe ("unit tests for Main", ()=>{
     })
 
     const wrapper = shallowMount(Main);
-    test("render a div",()=>{
+    test("render a div", () => {
         expect(wrapper.contains("item-stub")).toBeTruthy();
     })
 })

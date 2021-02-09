@@ -6,7 +6,7 @@ import Vuex from "vuex";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe ("unit tests for Content", ()=>{
+describe("unit tests for Content", () => {
 
     let getters;
     let store;
@@ -22,7 +22,7 @@ describe ("unit tests for Content", ()=>{
 
     const wrapper = shallowMount(Content);
 
-    test("rendering components inside Content",()=>{
+    test("rendering components inside Content", () => {
         expect(wrapper.contains("div")).toBeTruthy();
     })
 })

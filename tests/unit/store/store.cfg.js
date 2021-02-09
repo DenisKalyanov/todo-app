@@ -1,4 +1,4 @@
-import {mutations, actions, getters} from "../../../src/store/modules/taskMethods";
+import { mutations, actions, getters } from "../../../src/store/modules/taskMethods";
 
 export default {
     state: {
@@ -8,4 +8,4 @@ export default {
     actions,
     mutations,
     getters
-  }
+}

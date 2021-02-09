@@ -6,7 +6,7 @@ import Vuex from "vuex";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe ("unit tests for Footer", ()=>{
+describe("unit tests for Footer", () => {
 
     let getters;
     let store;
@@ -22,7 +22,7 @@ describe ("unit tests for Footer", ()=>{
 
     const wrapper = shallowMount(Footer);
     console.log(wrapper.html())
-    test("rendering components inside Footer",()=>{
+    test("rendering components inside Footer", () => {
         expect(wrapper.contains("div")).toBeTruthy();
         expect(wrapper.contains("statusbuttons-stub")).toBeTruthy();
         expect(wrapper.contains("button-stub")).toBeTruthy();

@@ -5,25 +5,25 @@ import Vuex from 'vuex'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe ("unit tests for TaskField", ()=>{
+describe("unit tests for TaskField", () => {
 
     const wrapper = mount(TaskField);
-           
-    test("render a input",()=>{
+
+    test("render a input", () => {
         expect(wrapper.contains("input")).toBeTruthy();
     })
-    
-    test("must be visible",()=>{
+
+    test("must be visible", () => {
         expect(wrapper.isVisible()).toBe(true);
     })
 
     test('setData', async () => {
-        await wrapper.setData({ newTask: 'NewTask1'})
+        await wrapper.setData({ newTask: 'NewTask1' })
         expect(wrapper.vm.newTask).toBe('NewTask1')
     })
 })
 
-describe ("unit tests for TaskField input", ()=>{
+describe("unit tests for TaskField input", () => {
 
     const wrapper = mount(TaskField);
 
@@ -35,15 +35,15 @@ describe ("unit tests for TaskField input", ()=>{
     })
 })
 
-describe ("unit tests for v-on handler",  ()=>{
+describe("unit tests for v-on handler", () => {
     const wrapper = mount(TaskField);
 
     test('setValue to data', async () => {
 
-    const textInput = wrapper.find('input[type="text"]')
-    await textInput.setValue('some value')
-    wrapper.trigger('keydown.enter')
-    expect(wrapper.vm.newTask).toBe('some value');
+        const textInput = wrapper.find('input[type="text"]')
+        await textInput.setValue('some value')
+        wrapper.trigger('keydown.enter')
+        expect(wrapper.vm.newTask).toBe('some value');
     })
 })
 
