@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="item" v-for="task in choisenTasks" :key="task.id">
+    <label class="item" v-for="task in chosenTasks" :key="task.id">
       <input
         type="checkbox"
         :id="task.id"
@@ -23,7 +23,7 @@ export default {
       this.changeStatus(target.id);
     },
   },
-  computed: mapGetters(["choisenTasks"]),
+  computed: mapGetters(["chosenTasks"]),
 };
 </script>
 <style lang="scss">

@@ -55,7 +55,7 @@ export default{
             return state.tasks.filter(task=>task.checked);
 
         },
-        choisenTasks(state, getters ){
+        chosenTasks(state, getters ){
             
             if(state.statusButton==="allTasks"){
                 return getters.allTasks
