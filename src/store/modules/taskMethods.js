@@ -13,7 +13,7 @@ export default{
         },
         createTask(state, newTask){
             if(newTask){
-                const task = {message: newTask, checked: false, id: 1};
+                const task = {message: newTask, checked: false, id: uuidv4};
                 state.tasks.push(task);
                 localStorage.setItem('tasks', JSON.stringify(state.tasks));
             }

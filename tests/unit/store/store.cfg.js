@@ -1,11 +1,11 @@
-import { mutations, actions, getters } from "../../../src/store/modules/taskMethods";
+import vuex from "../../../src/store/modules/taskMethods";
 
 export default {
     state: {
         tasks: [],
         statusButton: "allTasks",
     },
-    actions,
-    mutations,
-    getters
+    actions : vuex.actions,
+    mutations: vuex.mutations,
+    getters: vuex.getters
 }

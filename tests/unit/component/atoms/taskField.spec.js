@@ -47,30 +47,30 @@ describe("unit tests for v-on handler", () => {
     })
 })
 
-// describe('TaskField.vue', () => {
-//     let mutation;
-//     let store;
-//     beforeEach(() => {
+describe('TaskField.vue', () => {
+    let mutation;
+    let store;
+    beforeEach(() => {
 
-//       mutation = {
-//         createTask: jest.fn(),
+      mutation = {
+        createTask: jest.fn(),
 
-//       }
-//       store = new Vuex.Store({
-//         mutation
-//       })
-//     })
-//     it('call "createTask", when event is "enter"', () => {
-//       const wrapper = shallowMount(TaskField, { store, localVue })
-//       const input = wrapper.find('input');
-//       input.element.value = 'input';
-//       input.trigger('enter');
-//       expect(mutation.createTask).toHaveBeenCalled();
-//     })
-// })
+      }
+      store = new Vuex.Store({
+        mutation
+      })
+    })
+    it('call "createTask", when event is "enter"', () => {
+      const wrapper = shallowMount(TaskField, { store, localVue })
+      const input = wrapper.find('input');
+      input.element.value = 'input';
+      input.trigger('keyup.enter');
+      expect(mutation.createTask).toHaveBeenCalled();
+    })
+})
 
-    // it('вызывает действие хранилища "actionClick" по нажатию кнопки', () => {
-    //   const wrapper = shallowMount(Actions, { store, localVue })
-    //   wrapper.find('button').trigger('click')
-    //   expect(actions.actionClick).toHaveBeenCalled()
-    // })
+    it('вызывает действие хранилища "actionClick" по нажатию кнопки', () => {
+      const wrapper = shallowMount(Actions, { store, localVue })
+      wrapper.find('button').trigger('click')
+      expect(actions.actionClick).toHaveBeenCalled()
+    })
