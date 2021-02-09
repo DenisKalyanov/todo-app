@@ -17,8 +17,13 @@ describe ("unit tests for Item", ()=>{
             
     choisenTasks: () => [
         {
-            id: '',
-            message: '',
+            id: '1',
+            message: '1',
+            checked: true
+        },
+        {
+            id: '2',
+            message: '2',
             checked: true
         }
     ],
@@ -39,6 +44,40 @@ describe ("unit tests for Item", ()=>{
         const wrapper = shallowMount(Item, {store, localVue});
         expect(wrapper.contains("input")).toBeTruthy();
     })
+})
 
+describe ("unit tests for Item input type checked", ()=>{
+    let getters;
+    let store;
 
+    beforeEach(() => {
+        getters = {
+            
+    choisenTasks: () => [
+        {
+            id: '1',
+            message: '1',
+            checked: true
+        },
+        {
+            id: '2',
+            message: '2',
+            checked: true
+        }
+    ],
+    }
+
+    store = new Vuex.Store({
+      getters
+    })
+  })
+  
+    test('setChecked', async () => {
+        const wrapper = shallowMount(Item, {store, localVue});
+        const checkboxInput = wrapper.find('input[type="checkbox"]')
+      
+        await checkboxInput.setChecked()
+        expect(checkboxInput.element.checked).toBeTruthy()
+      })
+    
 })
