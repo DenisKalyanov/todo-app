@@ -1,9 +1,5 @@
 import {mount} from "@vue/test-utils";
 import StatusButtons from "../../../../src/components/molecules/StatusButtons";
-// import Vuex from "vuex";
-// import { getters } from "../../../../src/store/modules/taskMethods";
-
-// const { choisenTasks } = getters;
 
 describe ("unit tests for StatusButtons", ()=>{
 
