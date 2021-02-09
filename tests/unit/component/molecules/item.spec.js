@@ -15,7 +15,7 @@ describe("unit tests for Item", () => {
     beforeEach(() => {
         getters = {
 
-            choisenTasks: () => [
+            chosenTasks: () => [
                 {
                     id: '1',
                     message: '1',
@@ -53,7 +53,7 @@ describe("unit tests for Item input type checked", () => {
     beforeEach(() => {
         getters = {
 
-            choisenTasks: () => [
+            chosenTasks: () => [
                 {
                     id: '1',
                     message: '1',
