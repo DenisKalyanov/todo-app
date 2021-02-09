@@ -13,6 +13,7 @@
     "@vue/cli-plugin-unit-jest": "^4.5.11",
     "core-js": "^3.6.5",
     "jest-cli": "^26.6.3",
+    "prettier": "^2.2.1",
     "uuid": "^8.3.2",
     "vue": "^2.6.11",
     "vuex": "^3.6.0"
@@ -44,7 +45,7 @@
       "parser": "babel-eslint"
     },
     "rules": {},
-     "overrides": [
+    "overrides": [
       {
         "files": [
           "**/__tests__/*.{j,t}s?(x)",
@@ -62,4 +63,3 @@
     "not dead"
   ]
 }
-

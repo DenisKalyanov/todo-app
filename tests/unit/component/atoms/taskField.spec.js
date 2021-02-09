@@ -50,7 +50,6 @@ describe ("unit tests for v-on handler",  ()=>{
 // describe('TaskField.vue', () => {
 //     let mutation;
 //     let store;
-
 //     beforeEach(() => {
 
 //       mutation = {
@@ -61,7 +60,6 @@ describe ("unit tests for v-on handler",  ()=>{
 //         mutation
 //       })
 //     })
-
 //     it('call "createTask", when event is "enter"', () => {
 //       const wrapper = shallowMount(TaskField, { store, localVue })
 //       const input = wrapper.find('input');
@@ -70,7 +68,6 @@ describe ("unit tests for v-on handler",  ()=>{
 //       expect(mutation.createTask).toHaveBeenCalled();
 //     })
 // })
-
 
     // it('вызывает действие хранилища "actionClick" по нажатию кнопки', () => {
     //   const wrapper = shallowMount(Actions, { store, localVue })

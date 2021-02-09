@@ -18,13 +18,10 @@ describe ("unit tests for App", ()=>{
           actions
         })
       })
-
-
+      
       test("contain a App",()=>{
         const wrapper = shallowMount(App, {store, localVue});
         expect(wrapper.contains("div")).toBeTruthy();
       })
-
-
 })
 

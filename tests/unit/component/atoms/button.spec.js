@@ -23,6 +23,7 @@ describe ("unit tests for Button", ()=>{
           status:'allTasks'
         }
       })
+      
 
     test("Are there props in button",()=>{
         expect(wrapper.props().buttonName).toBe('All');
