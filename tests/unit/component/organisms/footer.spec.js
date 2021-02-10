@@ -21,7 +21,6 @@ describe("unit tests for Footer", () => {
     })
 
     const wrapper = shallowMount(Footer);
-    console.log(wrapper.html())
     test("rendering components inside Footer", () => {
         expect(wrapper.contains("div")).toBeTruthy();
         expect(wrapper.contains("statusbuttons-stub")).toBeTruthy();

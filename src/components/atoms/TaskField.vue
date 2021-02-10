@@ -20,6 +20,7 @@ export default {
   methods: {
     ...mapMutations(["createTask"]),
     addTask() {
+      console.log('123')
       this.createTask(this.newTask);
       this.newTask = "";
     },

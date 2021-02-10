@@ -26,8 +26,8 @@ export default {
     check(target) {
       this.changeStatus(target.id);
     },
-    ...mapGetters(["allTasks", "getStatuButton"]),
 
+    ...mapGetters(["allTasks", "getStatuButton"]),
     chosenTasks(allTasks, getStatuButton) {
       switch (getStatuButton()) {
         case "allTasks":

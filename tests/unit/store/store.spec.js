@@ -3,6 +3,16 @@ import Vuex from "vuex";
 import storeConfig from "./store.cfg";
 import { cloneDeep } from "lodash";
 
+describe("unit tests action state", () => {
+  test("set state used action", () => {
+    const localVue = createLocalVue();
+    localVue.use(Vuex);
+    const store = new Vuex.Store(cloneDeep(storeConfig));
+    store.dispatch("setState");
+    expect(store.state.tasks.length).toBe(0);
+  });
+});
+
 describe("unit tests mutation state", () => {
   test("adding a new object to state ", () => {
     const localVue = createLocalVue();
@@ -11,11 +21,14 @@ describe("unit tests mutation state", () => {
     const store = new Vuex.Store(cloneDeep(storeConfig));
     let newTask = "newTodo";
     expect(store.state.tasks.length).toBe(0);
+    expect(!!localStorage.getItem("tasks")).toBe(false);
 
     store.commit("createTask", newTask);
     expect(store.state.tasks[0].message).toBe("newTodo");
     expect(store.state.tasks[0].checked).toBe(false);
     expect(store.state.tasks[0].id).toBeTruthy();
+    expect(store.state.tasks.length).toBe(1);
+    expect(!!localStorage.getItem("tasks")).toBe(true);
   });
 
   test("change ckecked flag", () => {
@@ -40,7 +53,6 @@ describe("unit tests mutation state", () => {
 
     let newTask = "newTask";
     store.commit("createTask", newTask);
-
     store.state.tasks[0].checked = true;
 
     const nameButtonForDelete = "deleteCompleted";
@@ -66,5 +78,22 @@ describe("unit tests mutation state", () => {
 
     store.commit("changeTypeTasks", nameButtonActive);
     expect(store.state.statusButton).toBe("activeTasks");
+  });
+});
+
+describe("unit tests getters state", () => {
+  test("get state and statusButton", () => {
+    const localVue = createLocalVue();
+    localVue.use(Vuex);
+
+    const store = new Vuex.Store(cloneDeep(storeConfig));
+
+    let newTask = "newTodo";
+    store.commit("createTask", newTask);
+
+    store.state.statusButton = "allTasks";
+
+    expect(store.getters.getStatuButton).toBe("allTasks");
+    expect(store.getters.allTasks).toBe(store.state.tasks);
   });
 });

@@ -1,83 +1,76 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
+import { shallowMount, createLocalVue, mount } from "@vue/test-utils";
 import Item from "../../../../src/components/molecules/Item";
 import Vuex from "vuex";
 
-
 const localVue = createLocalVue();
-
 localVue.use(Vuex);
 
-describe("unit tests for Item", () => {
+let store;
+let mutations;
+let getters;
 
-    let getters;
-    let store;
+beforeEach(() => {
+  mutations = {
+    changeStatus: jest.fn(),
+  };
+  getters = {
+    getStatuButton: () => "allTasks",
+    chosenTasks: () => [
+      {
+        id: "1",
+        message: "1",
+        checked: true,
+      },
+      {
+        id: "2",
+        message: "2",
+        checked: true,
+      },
+    ],
+    allTasks: () => getters.chosenTasks(),
+  };
+  store = new Vuex.Store({
+    mutations,
+    getters,
+  });
+});
 
-    beforeEach(() => {
-        getters = {
+// describe("unit tests for Item", () => {
 
-            chosenTasks: () => [
-                {
-                    id: '1',
-                    message: '1',
-                    checked: true
-                },
-                {
-                    id: '2',
-                    message: '2',
-                    checked: true
-                }
-            ],
-        }
+//   test("contain a Item", () => {
+//     const wrapper = shallowMount(Item, { store, localVue });
+//     expect(wrapper.contains("div")).toBeTruthy();
+//   });
 
-        store = new Vuex.Store({
-            getters
-        })
-    })
+//   test("contain a Item of input", () => {
+//     const wrapper = shallowMount(Item, { store, localVue });
+//     expect(wrapper.contains("input")).toBeTruthy();
+//   });
+// });
 
+// describe("unit tests for Item input type checked", () => {
 
-    test("contain a Item", () => {
-        const wrapper = shallowMount(Item, { store, localVue });
-        expect(wrapper.contains("div")).toBeTruthy();
-    })
+//   test("setChecked", async () => {
+//     const wrapper = shallowMount(Item, { store, localVue });
+//     const checkboxInput = wrapper.find('input[type="checkbox"]');
 
-    test("contain a Item of input", () => {
-        const wrapper = shallowMount(Item, { store, localVue });
-        expect(wrapper.contains("input")).toBeTruthy();
-    })
-})
+//     await checkboxInput.setChecked();
+//     expect(checkboxInput.element.checked).toBeTruthy();
+//   });
+// });
 
-describe("unit tests for Item input type checked", () => {
-    let getters;
-    let store;
+// describe("Item.vue", () => {
+//   it('call "changeStatus", when event is "click"', () => {
+//     const wrapper = mount(Item, { store, localVue });
+//     wrapper.find('input[type="checkbox"]').trigger("change");
+//     expect(mutations.changeStatus).toHaveBeenCalled();
+//   });
+// });
 
-    beforeEach(() => {
-        getters = {
-
-            chosenTasks: () => [
-                {
-                    id: '1',
-                    message: '1',
-                    checked: true
-                },
-                {
-                    id: '2',
-                    message: '2',
-                    checked: true
-                }
-            ],
-        }
-
-        store = new Vuex.Store({
-            getters
-        })
-    })
-
-    test('setChecked', async () => {
-        const wrapper = shallowMount(Item, { store, localVue });
-        const checkboxInput = wrapper.find('input[type="checkbox"]')
-
-        await checkboxInput.setChecked()
-        expect(checkboxInput.element.checked).toBeTruthy()
-    })
-
-})
+describe("Item.vue", () => {
+  it("check, is working function for render List", () => {
+    mount(Item, { store, localVue });
+    expect(getters.getStatuButton).toHaveBeenCalled();
+    expect(getters.allTasks).toHaveBeenCalled();
+  });
+});
