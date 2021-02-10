@@ -45,15 +45,8 @@ export default {
     allTasks(state) {
       return state.tasks;
     },
-    chosenTasks(state, getters) {
-      switch (state.statusButton) {
-        case "allTasks":
-          return getters.allTasks;
-        case "activeTasks":
-          return state.tasks.filter((task) => !task.checked);
-        case "completedTasks":
-          return state.tasks.filter((task) => task.checked);
-      }
+    getStatuButton(state){
+      return state.statusButton;
     },
   },
 };

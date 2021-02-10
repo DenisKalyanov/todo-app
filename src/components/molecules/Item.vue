@@ -1,6 +1,10 @@
 <template>
   <div>
-    <label class="item" v-for="task in chosenTasks" :key="task.id">
+    <label
+      class="item"
+      v-for="task in chosenTasks(allTasks, getStatuButton)"
+      :key="task.id"
+    >
       <input
         type="checkbox"
         :id="task.id"
@@ -22,8 +26,19 @@ export default {
     check(target) {
       this.changeStatus(target.id);
     },
+    ...mapGetters(["allTasks", "getStatuButton"]),
+
+    chosenTasks(allTasks, getStatuButton) {
+      switch (getStatuButton()) {
+        case "allTasks":
+          return allTasks();
+        case "activeTasks":
+          return allTasks().filter((task) => !task.checked);
+        case "completedTasks":
+          return allTasks().filter((task) => task.checked);
+      }
+    },
   },
-  computed: mapGetters(["chosenTasks"]),
 };
 </script>
 <style lang="scss">
