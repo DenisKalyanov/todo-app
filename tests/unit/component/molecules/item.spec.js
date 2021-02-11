@@ -14,7 +14,6 @@ beforeEach(() => {
     changeStatus: jest.fn(),
   };
   getters = {
-    getStatuButton: () => "allTasks",
     chosenTasks: () => [
       {
         id: "1",
@@ -27,7 +26,6 @@ beforeEach(() => {
         checked: true,
       },
     ],
-    allTasks: () => getters.chosenTasks(),
   };
   store = new Vuex.Store({
     mutations,
@@ -69,8 +67,8 @@ beforeEach(() => {
 
 describe("Item.vue", () => {
   it("check, is working function for render List", () => {
-    mount(Item, { store, localVue });
-    expect(getters.getStatuButton).toHaveBeenCalled();
-    expect(getters.allTasks).toHaveBeenCalled();
+    const wrapper = mount(Item, { store, localVue });
+   
+    expect(getter.filteredTasks).toHaveBeenCalled();
   });
 });

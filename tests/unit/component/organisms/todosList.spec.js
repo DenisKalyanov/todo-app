@@ -7,19 +7,6 @@ localVue.use(Vuex);
 
 describe("unit tests for TodosList", () => {
 
-
-    let getters;
-    let store;
-
-    beforeEach(() => {
-        getters = {
-            setState: jest.fn(),
-        }
-        store = new Vuex.Store({
-            getters
-        })
-    })
-
     const wrapper = shallowMount(TodosList);
 
     test("render a div", () => {

@@ -92,8 +92,10 @@ describe("unit tests getters state", () => {
     store.commit("createTask", newTask);
 
     store.state.statusButton = "allTasks";
-
-    expect(store.getters.getStatuButton).toBe("allTasks");
-    expect(store.getters.allTasks).toBe(store.state.tasks);
+    expect(store.getters.filteredTasks).toBe(store.state.tasks);
+    store.state.statusButton = "activeTasks";
+    expect(store.getters.filteredTasks.length).toBe(1);
+    store.state.statusButton = "completedTasks";
+    expect(store.getters.filteredTasks.length).toBe(0);
   });
 });

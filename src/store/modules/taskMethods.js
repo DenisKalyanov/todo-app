@@ -41,11 +41,15 @@ export default {
     statusButton: "allTasks",
   },
   getters: {
-    allTasks(state) {
-      return state.tasks;
-    },
-    getStatuButton(state){
-      return state.statusButton;
+    filteredTasks(state) {
+      switch (state.statusButton) {
+        case "activeTasks":
+          return state.tasks.filter((task) => !task.checked);
+        case "completedTasks":
+          return state.tasks.filter((task) => task.checked);
+        default:
+          return state.tasks;
+      }
     },
   },
 };
