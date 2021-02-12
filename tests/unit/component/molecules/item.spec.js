@@ -14,7 +14,7 @@ beforeEach(() => {
     changeStatus: jest.fn(),
   };
   getters = {
-    chosenTasks: () => [
+    filteredTasks: () => [
       {
         id: "1",
         message: "1",
@@ -33,42 +33,35 @@ beforeEach(() => {
   });
 });
 
-// describe("unit tests for Item", () => {
+describe("unit tests for Item", () => {
+  test("contain a Item", () => {
+    const wrapper = shallowMount(Item, { store, localVue });
+    expect(wrapper.contains("div")).toBeTruthy();
+  });
 
-//   test("contain a Item", () => {
-//     const wrapper = shallowMount(Item, { store, localVue });
-//     expect(wrapper.contains("div")).toBeTruthy();
-//   });
-
-//   test("contain a Item of input", () => {
-//     const wrapper = shallowMount(Item, { store, localVue });
-//     expect(wrapper.contains("input")).toBeTruthy();
-//   });
-// });
-
-// describe("unit tests for Item input type checked", () => {
-
-//   test("setChecked", async () => {
-//     const wrapper = shallowMount(Item, { store, localVue });
-//     const checkboxInput = wrapper.find('input[type="checkbox"]');
-
-//     await checkboxInput.setChecked();
-//     expect(checkboxInput.element.checked).toBeTruthy();
-//   });
-// });
-
-// describe("Item.vue", () => {
-//   it('call "changeStatus", when event is "click"', () => {
-//     const wrapper = mount(Item, { store, localVue });
-//     wrapper.find('input[type="checkbox"]').trigger("change");
-//     expect(mutations.changeStatus).toHaveBeenCalled();
-//   });
-// });
-
-describe("Item.vue", () => {
-  it("check, is working function for render List", () => {
-    const wrapper = mount(Item, { store, localVue });
-   
-    expect(getter.filteredTasks).toHaveBeenCalled();
+  test("contain a Item of input", () => {
+    const wrapper = shallowMount(Item, { store, localVue });
+    console.log(wrapper.html());
+    expect(wrapper.contains("input")).toBeTruthy();
   });
 });
+
+describe("unit tests for Item input type checked", () => {
+
+  test("setChecked", async () => {
+    const wrapper = shallowMount(Item, { store, localVue });
+    const checkboxInput = wrapper.find('input[type="checkbox"]');
+
+    await checkboxInput.setChecked();
+    expect(checkboxInput.element.checked).toBeTruthy();
+  });
+});
+
+describe("Item.vue", () => {
+  it('call "changeStatus", when event is "click"', () => {
+    const wrapper = mount(Item, { store, localVue });
+    wrapper.find('input[type="checkbox"]').trigger("change");
+    expect(mutations.changeStatus).toHaveBeenCalled();
+  });
+});
+
